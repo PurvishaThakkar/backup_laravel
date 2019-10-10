@@ -25,4 +25,11 @@ class QuestionController extends Controller
         exit;
         return redirect('questions.AddQuestion',$data); 
     }
+     public function show(Request $request)
+    {
+        $data = $request->all();
+        print_r($data);
+        exit;
+        //return view('questions.showall');
+    }
 }

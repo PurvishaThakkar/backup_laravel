@@ -63,21 +63,28 @@
                             </select>
                             <button class="btn btn-info btn-lg" style="width:20%;display:inline-block;" onclick="myFunction()">Add Question</button>
 
-<p id="demo"></p>
+ <p id="demo"></p>
 
 
 
 
 <div id='a-players'>
-    <form name='myForm' id='randomTeams'>
-      
-    <div id="block"><br></div>
+    
+<form name='myForm' id='randomTeams'>
+    <div id="block" name="fields"><br></div>
     <p id="demo1"></p>
     <input type='button' id='add' value='Add'>
-    <input type='button' id='remove' value='Remove'>
+    <input type='button' id='remove' value='Remove'> 
+    <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <button type="submit" class="btn btn-primary" style="align:center">
+                                    submit
+                                </button>
+                            </div>
+     </div>
     </form>
   </div>
-
+ 
 </body>
 </html>
 </body>

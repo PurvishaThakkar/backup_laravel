@@ -64,6 +64,7 @@ Route::post('surveys/SurveyDetail/add','SurveyController@store_survey');
 
  
 Route::get('question/add','QuestionController@type_listing')->name('ques_type'); 
+Route::post('question/add','QuestionController@show'); 
 //Route::post('question/add','QuestionController@get_listing');
 
 Route::get('/home', 'HomeController@index')->name('home');
