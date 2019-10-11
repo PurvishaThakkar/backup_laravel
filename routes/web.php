@@ -63,8 +63,8 @@ Route::get('surveys/SurveyDetail/add','SurveyController@insert_form')->name('sur
 Route::post('surveys/SurveyDetail/add','SurveyController@store_survey'); 
 
  
-Route::get('question/add','QuestionController@type_listing')->name('ques_type'); 
-Route::post('question/add','QuestionController@show'); 
+Route::get('question/add','SurveyAddMoreController@addMore')->name('ques_type');
+Route::post('question/add','SurveyAddMoreController@addMorePost')->name('addmorePost');
 //Route::post('question/add','QuestionController@get_listing');
 
 Route::get('/home', 'HomeController@index')->name('home');

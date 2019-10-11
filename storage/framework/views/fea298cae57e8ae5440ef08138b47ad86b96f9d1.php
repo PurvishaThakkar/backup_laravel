@@ -21,7 +21,11 @@
 <table class="table">
 
     <tr>
-    <?php  foreach( $all as $one) { ?>
+    <?php  
+     foreach( $all as $one) { ?>
+     <?php if(empty($surveys)): ?>
+          <h1>no records</h1>
+     <?php else: ?>
      <?php if($one != "created_at" and $one != "updated_at" and $one != "token" and  $one != "password"): ?>
             <?php if(preg_match("/_id/",$one)): ?>
             <td style=" text-transform: uppercase;"><b><?php  echo preg_replace("/_id/", "_name", $one); ?></b></td>
@@ -29,13 +33,23 @@
            <td style=" text-transform: uppercase;"><b><?php echo e($one); ?></b></td>
            <?php endif; ?>
     <?php endif; ?> 
+    <?php endif; ?>
+
     <?php } ?>
       
     <?php if(Auth::user()->name=="purva"): ?>   <td colspan="2" style="text-align:justify"> <b> ACTION</b></td>  <?php endif; ?> 
 
     <tr>
    <?php  foreach($surveys as $survey){ 
-   ?>
+       if($survey->company->c_name == Auth::user()->name)
+       {?>
+        <script type="text/javascript" language="JavaScript">
+        doSomething();
+        function doSomething(){
+         var ques = prompt("Please enter your name:", "Harry Potter");
+        }
+     </script>
+
    <tr>
    <td>  <?php echo $survey -> id;?></td>
    <td><?php echo $survey->company->c_name;?></td>
@@ -50,14 +64,18 @@
             <a href="<?php echo e(route('survey_delete',[$survey -> id])); ?>">delete</a> 
     </td>
      <?php endif; ?> 
-    <?php } ?> -->
+       <?php }
+        ?>
+    <?php } 
+     ?> 
  
    </tr>
 
 
 </table>
+
+
         <!-- <div class="col-md-8 col-md-offset-5"> <?php echo e($surveys->links()); ?></div> -->
-       
      
                 </div>
             </div>
